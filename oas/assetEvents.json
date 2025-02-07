@@ -8,7 +8,7 @@
   },
   "servers": [
     {
-      "url": "https://rea-poc-vkct.apiwiz.io/",
+      "url": "https://petstore3.swagger.io/bp/v11",
       "variables": {}
     }
   ],
