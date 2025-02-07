@@ -1,0 +1,256 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "asset-events",
+    "version": "v1.0.0",
+    "description": "Swagger Documentation for Asset Events",
+    "termsOfService": ""
+  },
+  "servers": [
+    {
+      "url": "https://petstore3.swagger.io/bpi/v11",
+      "variables": {}
+    }
+  ],
+  "paths": {
+    "/events": {
+      "get": {
+        "operationId": "getEventById",
+        "tags": [],
+        "description": "Get AssetEvent By UUID",
+        "summary": "Get AssetEvent By UUID",
+        "externalDocs": {
+          "url": "",
+          "description": ""
+        },
+        "parameters": [
+          {
+            "name": "EventUUID",
+            "in": "query",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "$ref": "#/components/parameters/Authorization"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {},
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/AssetEvent"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": true,
+        "security": [],
+        "servers": [],
+        "callbacks": {}
+      },
+      "put": {
+        "operationId": "updateEvent",
+        "tags": [],
+        "description": "Update an AssetEvent",
+        "summary": "Update an AssetEvent",
+        "externalDocs": {
+          "url": "",
+          "description": ""
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/EventUUID"
+          },
+          {
+            "$ref": "#/components/parameters/Authorization"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AssetEvent"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {},
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/AssetEvent"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": true,
+        "security": [],
+        "servers": [],
+        "callbacks": {}
+      },
+      "post": {
+        "operationId": "createAssetEvent",
+        "tags": [],
+        "description": "Create an AssetEvent",
+        "summary": "Create an AssetEvent",
+        "externalDocs": {
+          "url": "",
+          "description": ""
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Authorization"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AssetEvent"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "",
+            "headers": {},
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/AssetEvent"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": true,
+        "security": [],
+        "servers": [],
+        "callbacks": {}
+      },
+      "delete": {
+        "operationId": "deleteEvent",
+        "tags": [],
+        "description": "Delete an Asset Event",
+        "summary": "Delete an Asset Event",
+        "externalDocs": {
+          "url": "",
+          "description": ""
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/EventUUID"
+          },
+          {
+            "$ref": "#/components/parameters/Authorization"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": true,
+        "security": [],
+        "servers": [],
+        "callbacks": {}
+      },
+      "servers": [],
+      "parameters": [],
+      "x-description": ""
+    }
+  },
+  "components": {
+    "schemas": {
+      "AssetEvent": {
+        "type": "object",
+        "properties": {
+          "EventUUID": {
+            "type": "string",
+            "example": "de7acda2-6b5e-11ed-a1eb-0242ac120002"
+          },
+          "SiteUUID": {
+            "type": "string",
+            "example": "de7acda2-6b5e-11ed-a1eb-0242ac120034"
+          },
+          "AssetEventType": {
+            "type": "string",
+            "example": "Sheaing"
+          },
+          "SupplyChhainHop": {
+            "type": "string",
+            "example": "SCH-23JK"
+          },
+          "InputAssetsUUID": {
+            "type": "array",
+            "example": [
+              "de7acda2-6b5e-11ed-a1eb-0242ac120049",
+              "de7acda2-6b5e-11ed-a1eb-0242ac120052"
+            ],
+            "items": {
+              "type": "string"
+            }
+          },
+          "OutputAssetUUID": {
+            "type": "string",
+            "example": "de7acda2-6b5e-11ed-a1eb-0242ac120082"
+          }
+        }
+      }
+    },
+    "responses": {},
+    "parameters": {
+      "EventUUID": {
+        "name": "EventUUID",
+        "in": "query",
+        "required": false,
+        "style": "form",
+        "explode": true,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "Authorization": {
+        "name": "Authorization",
+        "in": "header",
+        "required": false,
+        "style": "simple",
+        "explode": false,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "Accept": {
+        "name": "Accept",
+        "in": "header",
+        "required": false,
+        "style": "simple",
+        "explode": false,
+        "schema": {
+          "type": "string"
+        }
+      }
+    },
+    "requestBodies": {}
+  },
+  "tags": [],
+  "externalDocs": {
+    "description": "",
+    "url": ""
+  }
+}
